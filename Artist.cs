@@ -1,6 +1,6 @@
 namespace Spotivy;
 
-public class Artist: Applicant
+public class Artist(String name): Applicant(name)
 {
     public List<Song> songs = new List<Song>();
     

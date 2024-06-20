@@ -1,10 +1,10 @@
 namespace Spotivy;
 
-public class Song
+public class Song(String name, List<String> genres )
 {
-    public String name;
-    public String ganre;
-    public String artist;
+    public String name = name;
+    public List<String> genres  = genres;
+    public List<Artist> artists = new List<Artist>() ;
     
     public String Play()
     {
