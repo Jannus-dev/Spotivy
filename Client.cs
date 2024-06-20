@@ -20,7 +20,7 @@ public class Client
         
     }
     
-    public void Printlist(List list)
+    public void Printlist(IEnumerable<Object> list)
     {
         
     }
