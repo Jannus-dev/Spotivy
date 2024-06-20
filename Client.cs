@@ -12,7 +12,9 @@ public class Client
     
     public void LoginUser(User user)
     {
-        
+       headUser = user;
+       PrintToConsole(headUser.name + " has logged in");
+
     }
     
     public void LogoutUser()
@@ -37,7 +39,7 @@ public class Client
     
     public void PrintToConsole(object text)
     {
-        
+        Console.WriteLine(text.ToString());
     }
     
 }
