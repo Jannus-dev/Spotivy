@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace Spotivy;
 
-public class SongCollection(String name, Applicant owner, List<Song> songs)
+public class SongCollection(String name, Applicant owner, List<Song> songs )
 {
     public String name = name;
     public Applicant owner = owner;
@@ -34,7 +34,10 @@ public class SongCollection(String name, Applicant owner, List<Song> songs)
 
     public void AddToPlaylist(Playlist playlist)
     {
-
+        foreach (var song in songs)
+        {
+            playlist.AddSong(song);
+        }
     }
 
     public List<String> GetSongs()
