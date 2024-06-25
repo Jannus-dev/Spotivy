@@ -28,7 +28,15 @@ public class Song(String name, List<String> genres)
     
     public String Pause()
     {
-        return null;
+        if (isPlaying)
+        {
+            isPlaying = false;
+            return "Paused " + name;
+        }
+        else
+        {
+            return "Song is not playing";
+        }
     }
     
     public String Skip()
