@@ -15,14 +15,19 @@ public class Song(String name, List<String> genres)
     
     public String Stop()
     {
-
-        return null;
+        if (isPlaying)
+        {
+            isPlaying = false;
+            return "Stopped " + name;
+        }
+        else
+        {
+            return "Song is not playing";
+        }
     }
     
     public String Pause()
     {
-        
-
         return null;
     }
     
