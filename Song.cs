@@ -1,6 +1,6 @@
 namespace Spotivy;
 
-public class Song(String name, List<String> genres )
+public class Song(String name, List<String> genres)
 {
     public String name = name;
     public List<String> genres  = genres;
@@ -8,8 +8,7 @@ public class Song(String name, List<String> genres )
     
     public String Play()
     {
-
-        return null;
+        return "Playing " + name;
     }
     
     public String Stop()
