@@ -1,6 +1,6 @@
 namespace Spotivy;
 
-public class Playlist: SongCollection
+public class Playlist(string name, Applicant owner, List<Song> songs) : SongCollection(name, owner, songs)
 {
     
     public void AddSong(Song song)

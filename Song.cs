@@ -2,7 +2,7 @@ namespace Spotivy;
 
 public class Song(String name, List<String> genres)
 {
-    public String name = name;
+    public String name = name ;
     public List<String> genres  = genres;
     public List<Artist> artists = new List<Artist>() ;
     private bool isPlaying = false;

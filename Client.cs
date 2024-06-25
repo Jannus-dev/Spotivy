@@ -22,9 +22,12 @@ public class Client
         
     }
     
-    public void Printlist(IEnumerable<Object> list)
+    public void Printlist(List<String> list)
     {
-        
+        foreach (var item in list)
+        {
+            PrintToConsole(item);
+        }
     }
 
     public int PrintChoice(String[] choices)
