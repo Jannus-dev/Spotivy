@@ -8,6 +8,9 @@ public class SongCollection
     public Applicant owner;
     public List<Song> songs;
 
+    private bool isPlaying = false;
+    private Song currentSong;
+
     protected SongCollection(String name, Applicant owner, List<Song> songs )
     {
         this.name = name;
@@ -18,26 +21,64 @@ public class SongCollection
 
     public String Play()
     {
-
-        return null;
+        if (isPlaying)
+        {
+            return "Song is already playing";
+        }
+        else
+        {
+            isPlaying = true;
+            currentSong = songs[0];
+            return "Playing " + currentSong.name;
+        }
     }
 
     public String Stop()
     {
-
-        return null;
+        if (isPlaying)
+        {
+            isPlaying = false;
+            return "Stopped " + currentSong.name;
+        }
+        else
+        {
+            return "Song is not playing";
+        }
     }
 
     public String Pause()
     {
-
-        return null;
+        if (isPlaying)
+        {
+            isPlaying = false;
+            return "Paused " + currentSong.name;
+        }
+        else
+        {
+            return "Song is not playing";
+        }
     }
 
     public String Skip()
     {
+        if (isPlaying)
+        {
+            int index = songs.IndexOf(currentSong);
+            if (index == songs.Count - 1)
+            {
+                currentSong = songs[0];
+            }
+            else
+            {
+                currentSong = songs[index + 1];
+            }
+            return "Playing " + currentSong.name;
+        }
+        else
+        {
+            return "Song is not playing";
+        }
 
-        return null;
     }
 
     public void AddToPlaylist(Playlist playlist)
