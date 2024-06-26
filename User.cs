@@ -18,7 +18,8 @@ public class User(string name): Applicant(name)
 
     public void RemoveFriend(User user)
     {
-
+        friends.Remove(user);
+        user.friends.Remove(this);
     }
 
     public void SendFriendRequest(User user)
