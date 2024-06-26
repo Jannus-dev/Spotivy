@@ -4,7 +4,18 @@ public class User(string name): Applicant(name)
 {
     public List<User> friends = new List<User>();
     public List<User> friedRequests = new List<User>();
-    
+
+    public List<String> GetFriendNames()
+    {
+        List<String> friendNames = new List<String>();
+        foreach (var friend in friends)
+        {
+            friendNames.Add(friend.name);
+        }
+
+        return friendNames;
+    }
+
     public void RemoveFriend(User user)
     {
 
