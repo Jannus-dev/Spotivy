@@ -2,7 +2,7 @@ namespace Spotivy;
 
 public class User(string name): Applicant(name)
 {
-    public List<User> friends = new List<User>();
+    public List<User> friends { get; } = new List<User>();
     public List<User> friedRequests = new List<User>();
 
     public List<String> GetFriendNames()
