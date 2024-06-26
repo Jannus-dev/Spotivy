@@ -8,11 +8,11 @@ public class Client
     public List<SongCollection> singels = new List<SongCollection>();
     public List<Playlist> playlists = new List<Playlist>();
     public List<Song> songs = new List<Song>();
-    public User headUser;
-    
+    public User headUser { get; set; }
+
     public void LoginUser(User user)
     {
-       headUser = user;
+       this.headUser = user;
        PrintToConsole(headUser.name + " has logged in");
 
     }
