@@ -11,7 +11,7 @@ public class SongCollection
     private bool isPlaying = false;
     private Song currentSong;
 
-    protected SongCollection(String name, Applicant owner, List<Song> songs )
+    public SongCollection(String name, Applicant owner, List<Song> songs )
     {
         this.name = name;
         this.owner = owner;

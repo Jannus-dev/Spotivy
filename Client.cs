@@ -2,12 +2,12 @@ namespace Spotivy;
 
 public class Client
 {
-    public List<Artist> artists = new List<Artist>();
-    public List<User> users = new List<User>();
-    public List<SongCollection> albums = new List<SongCollection>();
-    public List<SongCollection> singels = new List<SongCollection>();
-    public List<Playlist> playlists = new List<Playlist>();
-    public List<Song> songs = new List<Song>();
+    public List<Artist> artists { get; set; } = new List<Artist>();
+    public List<User> users { get; set; } = new List<User>();
+    public List<SongCollection> albums { get; set; } = new List<SongCollection>();
+    public List<SongCollection> singels { get; set; } = new List<SongCollection>();
+    public List<Playlist> playlists { get; set; } = new List<Playlist>();
+    public List<Song> songs { get; set; } = new List<Song>();
     public User headUser { get; set; }
 
     public void LoginUser(User user)
