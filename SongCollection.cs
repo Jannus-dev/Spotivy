@@ -2,11 +2,19 @@ using System.Diagnostics;
 
 namespace Spotivy;
 
-public class SongCollection(String name, Applicant owner, List<Song> songs )
+public class SongCollection
 {
-    public String name = name;
-    public Applicant owner = owner;
-    public List<Song> songs = songs;
+    public String name;
+    public Applicant owner;
+    public List<Song> songs;
+
+    protected SongCollection(String name, Applicant owner, List<Song> songs )
+    {
+        this.name = name;
+        this.owner = owner;
+        this.songs = songs;
+        owner.SongCollections.Add(this);
+    }
 
     public String Play()
     {
