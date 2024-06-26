@@ -5,11 +5,6 @@ public class User(string name): Applicant(name)
     public List<User> friends = new List<User>();
     public List<User> friedRequests = new List<User>();
     
-    public void AddFriend(User user)
-    {
-
-    }
-    
     public void RemoveFriend(User user)
     {
 
@@ -17,12 +12,13 @@ public class User(string name): Applicant(name)
 
     public void SendFriendRequest(User user)
     {
-
+        user.friedRequests.Add(this);
     }
     
     public void AcceptFriendRequest(User user)
     {
-
+        friends.Add(user);
+        user.friends.Add(this);
     }
     
 }
