@@ -11,9 +11,4 @@ public class Playlist(string name, Applicant owner, List<Song> songs) : SongColl
     {
         this.songs.Remove(song);
     }
-    
-    public Playlist Copy()
-    {
-        return new Playlist(this.name, this.owner, this.songs);
-    }
 }
