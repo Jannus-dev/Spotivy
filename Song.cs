@@ -41,7 +41,7 @@ public class Song(String name, List<String> genres)
     
     public String Skip()
     {
-
-        return null;
+        isPlaying = false;
+        return "Skipped " + name;
     }
 }

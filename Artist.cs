@@ -11,6 +11,7 @@ public class Artist(String name): Applicant(name)
     
     public void AddSong(Song song)
     {
-        
+        songs.Add(song);
+        song.artists.Add(this);
     }
 }
