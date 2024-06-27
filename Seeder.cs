@@ -7,17 +7,17 @@ public class Seeder(Client client)
 
     public void Seed()
     {
-        SeedUsers();
-        SeedArtists();
-        SeedSongs();
-        SeedAlbums();
-        SeedSingles();
-        SeedPlaylists();
+        client.users = SeedUsers();
+        client.artists = SeedArtists();
+        client.songs = SeedSongs();
+        client.albums = SeedAlbums();
+        client.singles = SeedSingles();
+        client.playlists = SeedPlaylists();
     }
 
-    private void SeedArtists()
+    private List<Artist> SeedArtists()
     {
-        client.artists = new List<Artist>
+        return new List<Artist>
         {
             new Artist("Adele"),
             new Artist("Ariana Grande"),
@@ -46,9 +46,9 @@ public class Seeder(Client client)
         };
     }
 
-    private void SeedUsers()
+    private  List<User> SeedUsers()
     {
-        client.users = new List<User>
+        return new List<User>
         {
             new User("John"),
             new User("Jane"),
@@ -64,9 +64,9 @@ public class Seeder(Client client)
         };
     }
 
-    private void SeedAlbums()
+    private List<SongCollection> SeedAlbums()
     {
-        client.albums = new List<SongCollection>
+        return new List<SongCollection>
         {
             new SongCollection("Pop Hits", client.artists[random.Next(0, client.artists.Count - 1)],
                 client.songs.Where(song => song.genres.Contains("Pop")).ToList()),
@@ -93,9 +93,9 @@ public class Seeder(Client client)
         };
     }
 
-    private void SeedSingles()
+    private List<SongCollection> SeedSingles()
     {
-        client.singels = new List<SongCollection>
+        return new List<SongCollection>
         {
             new SongCollection("Indie Hits", client.artists[random.Next(0, client.artists.Count - 1)],
                 client.songs.Where(song => song.genres.Contains("Indie")).ToList()),
@@ -118,11 +118,11 @@ public class Seeder(Client client)
         };
     }
 
-    private void SeedPlaylists()
+    private List<Playlist> SeedPlaylists()
     {
-        client.playlists = new List<Playlist>
+        return new List<Playlist>
         {
-            new Playlist("Indie Collection", client.headUser,
+            new Playlist("Indie Collection", client.users[random.Next(0, client.users.Count)],
                 client.songs.Where(song => song.genres.Contains("Indie")).ToList()),
             new Playlist("Chill Vibes", client.users[random.Next(0, client.users.Count)],
                 client.songs.Where(song => song.genres.Contains("Ambient")).ToList()),
@@ -167,7 +167,7 @@ public class Seeder(Client client)
         };
     }
 
-    private void SeedSongs()
+    private List<Song> SeedSongs()
     {
         List<Song> songs = new List<Song>
         {
@@ -199,6 +199,6 @@ public class Seeder(Client client)
             client.artists[random.Next(0, client.artists.Count - 1)].AddSong(song);
         }
 
-        client.songs = songs;
+        return songs;
     }
 }

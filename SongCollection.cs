@@ -9,7 +9,7 @@ public class SongCollection
     public List<Song> songs;
 
     private bool isPlaying = false;
-    private Song currentSong;
+    private Song currentSong = null!;
 
     public SongCollection(String name, Applicant owner, List<Song> songs )
     {

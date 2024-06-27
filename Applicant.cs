@@ -7,11 +7,14 @@ public class Applicant(string name)
     
     public void AddSongCollection(SongCollection songCollection)
     {
-        
+        SongCollections.Add(songCollection);
     }
     
     public void ShowSongCollections()
     {
-        
+        foreach (var songCollection in SongCollections)
+        {
+
+        }
     }
 }

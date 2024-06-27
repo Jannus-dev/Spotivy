@@ -14,6 +14,6 @@ public class Playlist(string name, Applicant owner, List<Song> songs) : SongColl
     
     public Playlist Copy()
     {
-        return null;
+        return new Playlist(this.name, this.owner, this.songs);
     }
 }
